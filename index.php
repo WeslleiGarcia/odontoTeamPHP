@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <?php 
         require_once 'config.php';
-        /*require_once 'funcoesGerais.php';*/
-        require_once 'funcoesGerais.php';
+        require_once 'marcarConsulta.php';
+
+    $marcarConsulta = marcarConsulta::getInstance(Conexao::getInstance()); 
+
 ?>
-<html lang="en">
+<html lang="pt-br">
 <?php include (HEAD_TEMPLATE); ?>
 <body id="page-top" class="index">
-<?php include (NAV_INDEX_TEMPLATE); ?>
-<?php include (HEADER_TEMPLATE); ?>
+    <?php include (NAV_INDEX_TEMPLATE); ?>
+    <?php include (HEADER_TEMPLATE); ?>
 
     <!-- Services Section -->
     <section id="services">

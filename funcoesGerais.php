@@ -1,5 +1,8 @@
 <?php 
+	require_once 'Conexao.php';
 	require_once 'marcarConsulta.php';
+
+	$marcarConsulta = marcarConsulta::getInstance(Conexao::getInstance()); 
   
 	$acao  = (isset($_POST['acao']))                  ? $_POST['acao'] : '';
 	$idCliente    = (isset($_POST['idCliente ']))                    ? $_POST['idCliente '] : '';

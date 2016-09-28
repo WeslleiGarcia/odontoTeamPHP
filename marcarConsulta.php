@@ -1,6 +1,6 @@
 <?php
-	require_once 'Conexao.php';
-	$marcarConsulta = marcarConsulta::getInstance(Conexao::getInstance()); 	
+	
+        require_once 'Conexao.php';
 	/*
 	 * Classe para operações CRUD na tabela ARTIGO   
 	 */
@@ -105,7 +105,7 @@
 		  * Metodo para consulta de artigos   
 		  * @return $dados - Array com os registros retornados pela consulta   
 		  */   
-		  public function getAllOdontologistas(){   
+		public function getAllOdontologistas(){   
 		   try{   
 		    $sql = "SELECT * FROM odontologista";   
 		    $stm = $this->pdo->prepare($sql);   
@@ -114,8 +114,8 @@
 		    return $dados;   
 		   }catch(PDOException $erro){   
 		    echo "<script>alert('Erro na linha: {$erro->getLine()}')</script>"; 
-		   }   
-		}
+		}   
 	}
+}
 ?>
 
