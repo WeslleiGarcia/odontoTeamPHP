@@ -78,7 +78,7 @@
 				
 				
                 <input type="hidden" name="acao" value="incluir" />
-                <button type="submit" name="btsalvar"   class="btn btn-primary btn-lg pull-center"> Marcar Consulta </button>
+                <button type="submit" name="btsalvar"   class="btn btn-primary btn-lg pull-center"> Salvar </button>
 				</div>
 				<div class="col-lg-3">
 				</div>
