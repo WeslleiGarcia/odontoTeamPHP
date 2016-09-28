@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Popup Modal Window Template | PrepBootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/popModalWindows.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Popup Modal Window <small>A template, demonstrating a popup modal window.</small></h1>
+</div>
+
+<!-- Popup Modal Window - START -->
+<div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">Launch Login Window</button></div>
+
+<div class="modal fade alert" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            <h3 class="modal-title" id="lineModalLabel">Modal Login Window</h3>
+        </div>
+        <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="user-email1" placeholder="Enter email">
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="user-email2" placeholder="Enter Password">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Remember login
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary center-block">Login</button>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
