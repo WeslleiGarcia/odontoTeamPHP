@@ -46,12 +46,14 @@
 		  public function insert($nomeCliente, $telefoneCliente, $cpfCliente){   
 		   if (!empty($nomeCliente) && !empty($telefoneCliente) && !empty($cpfCliente)):   
 		    try{   
-		     $sql = "INSERT INTO cliente (nomeCliente, telefone, cpf) VALUES (?, ?, ?)";   
+		     $sql = "INSERT INTO cliente (nomeCliente, telefone, cpf)
+		      VALUES (:nomeCliente, :telefoneCliente, :cpfCliente)";   
 		     $stm = $this->pdo->prepare($sql);   
-		     $stm->bindValue(1, $nomeCliente);   
-		     $stm->bindValue(2, $telefone);   
-		     $stm->bindValue(3, $cpf);   
-		     $stm->execute();   
+		     $stm->bindValue(':nomeCliente', $nomeCliente);   
+		     $stm->bindValue(':telefoneCliente', $telefoneCliente);   
+		     $stm->bindValue(':cpfCliente', $cpfCliente);   
+		     /*$stm->execute();*/
+		     $exec = $pdo->exec($sql); 
 		     echo "<script>alert('Registro inserido com sucesso')</script>";   
 		    }catch(PDOException $erro){   
 		     echo "<script>alert('Erro na linha: {$erro->getLine()}')</script>"; 

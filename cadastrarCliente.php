@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php 
         require_once 'config.php';
-        require_once 'funcoesGerais.php';
         
 ?>
 <html lang="en">
@@ -76,8 +75,6 @@
                     </div>
                 </div> -->
 				
-				
-                <input type="hidden" name="acao" value="incluir" />
                 <button type="submit" name="btsalvar"   class="btn btn-primary btn-lg pull-center"> Salvar </button>
 				</div>
 				<div class="col-lg-3">
