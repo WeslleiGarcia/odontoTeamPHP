@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="row">
-        <form role="form" name="formMarcarConsulta" method="POST" action="funcoesGerais.php"> <!-- marcarConsulta.php -->
+        <form role="form" > <!--name="formMarcarConsulta" method="POST" action="funcoesGerais.php"  -->
 			<div class="col-lg-3">
 			</div>
             <div class="col-lg-6">

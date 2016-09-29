@@ -1,5 +1,5 @@
 <?php
-	
+		
         require_once 'Conexao.php';
 	/*
 	 * Classe para operações CRUD na tabela ARTIGO   
@@ -43,22 +43,20 @@
 		  * @param $titulo - Valor para o campo titulo   
 		  * @param autor  - Valor para o campo autor   
 		  */   
-		  public function insert($nomeCliente, $telefoneCliente, $cpfCliente, $croMedico, $dataConsulta, $horaConsulta){   
-		   if (!empty($nomeCliente) && !empty($telefoneCliente) && !empty($cpfCliente) && !empty($croMedico) && !empty($dataConsulta) && !empty($horaConsulta)):   
+		  public function insert($idCliente, $croMedico, $dataConsulta, $horaConsulta){   
+		   if (!empty($idCliente) && !empty($croMedico) && !empty($dataConsulta) && !empty($horaConsulta)):   
 			    try{   
-			     $sql = "INSERT INTO consulta (nomeCliente, telefone, cpf, croMedico, dataConsulta, horaConsulta)
-			      VALUES (:nomeCliente, :telefoneCliente, :cpfCliente, :croMedico, :dataConsulta, :horaConsulta)";   
+			     $sql = "INSERT INTO consulta (Cliente_idCliente, Odontologista_cro, dataConsulta, horaConsulta)
+			      VALUES (:idCliente, :croMedico, :dataConsulta, :horaConsulta)";   
 			     $stm = $this->pdo->prepare($sql);   
-			     $stm->bindValue(':nomeCliente', $nomeCliente);   
-			     $stm->bindValue(':telefoneCliente', $telefoneCliente);   
-			     $stm->bindValue(':cpfCliente', $cpfCliente);
+			     $stm->bindValue(':idCliente', $idCliente); 
 			     $stm->bindValue(':croMedico', $croMedico);   
 			     $stm->bindValue(':dataConsulta', $dataConsulta);   
 			     $stm->bindValue(':horaConsulta', $horaConsulta);   
 			     $stm->execute(); 
-			     echo "<script>alert('Registro inserido com sucesso')</script>";   
+			     echo "<script>alert('Consulta marcada com sucesso')</script>";   
 			    }catch(PDOException $erro){   
-			     echo "<script>alert('Erro na linha: {$erro->getLine()}')</script>"; 
+			     echo "<script>alert('Classe Consulta-> Erro na linha: {$erro->getLine()}')</script>"; 
 			    }   
 		   endif;   
 		  } 

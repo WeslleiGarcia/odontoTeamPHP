@@ -106,17 +106,41 @@
 		  * Metodo para consulta de artigos   
 		  * @return $dados - Array com os registros retornados pela consulta   
 		  */   
-		public function getAllOdontologistas(){   
-		   try{   
-		    $sql = "SELECT * FROM odontologista";   
-		    $stm = $this->pdo->prepare($sql);   
-		    $stm->execute();   
-		    $dados = $stm->fetchAll(PDO::FETCH_OBJ);   
-		    return $dados;   
-		   }catch(PDOException $erro){   
-		    echo "<script>alert('Erro na linha: {$erro->getLine()}')</script>"; 
-		}   
+			public function getAllOdontologistas(){   
+			   try{   
+			    $sql = "SELECT * FROM odontologista";   
+			    $stm = $this->pdo->prepare($sql);   
+			    $stm->execute();   
+			    $dados = $stm->fetchAll(PDO::FETCH_OBJ);   
+			    return $dados;   
+			   }catch(PDOException $erro){   
+			    	echo "<script>alert('Erro na linha: {$erro->getLine()}')</script>";
+				}
+			}
+			public function pesquisarNomeCliente($nomeCliente){
+				try{
+					$sql = "SELECT idCliente FROM cliente where nomeCliente = :nomeCliente";
+					$stm = $this->pdo->prepare($sql);   
+			    	$stm->execute(); 
+			    	$dados = $stm->fetchAll(PDO::FETCH_OBJ);   
+			    	return $dados;
+				}catch(PDOException $erro){   
+			    	echo "<script>alert('Erro na linha: {$erro->getLine()}')</script>"; 
+				}
+			} 
+
+			public function getAllClientes(){
+				try{
+					$sql = "SELECT * FROM cliente";
+					$stm = $this->pdo->prepare($sql);   
+			    	$stm->execute(); 
+			    	$dados = $stm->fetchAll(PDO::FETCH_OBJ);   
+			    	return $dados;
+				}catch(PDOException $erro){   
+			    	echo "<script>alert('Erro na linha: {$erro->getLine()}')</script>"; 
+				}
+			} 
 	}
-}
+
 ?>
 
