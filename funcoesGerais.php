@@ -20,12 +20,21 @@
 	foreach ($dados as $reg):
 
 		if($nomeCliente == $reg->nomeCliente){
-			$id = $reg->nomeCliente;
-			$consulta->insert($id, $croMedico, $dataConsulta, $horaConsulta);
+			$id = $reg->idCliente;
+			$consulta->insert($id, $croMedico,  $horaConsulta); /*$dataConsulta,*/
 		}else{
 			echo "nao encontrado";
 		}
 	endforeach;
+
+	$idTeste = $reg->idCliente;
+	echo "id: ".$idTeste; echo "<br />";
+	echo "telefone: ".$telefoneCliente; echo "<br />";
+	echo "cpf: ".$cpfCliente; echo "<br />";
+	echo "cro: ".$croMedico; echo "<br />";
+	echo "data: ".$dataConsulta; echo "<br />";
+	echo "hora: ".$horaConsulta; echo "<br />";
+
 	/*$cliente->insert($nomeCliente, $telefoneCliente, $cpfCliente); */
 /*
 	$dados = $cliente->pesquisaNomeCliente($nomeCliente);
