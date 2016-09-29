@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="row">
-        <form role="form" > <!--name="formMarcarConsulta" method="POST" action="funcoesGerais.php"  -->
+        <form role="form" name="formMarcarConsulta" method="POST" action="funcoesGerais.php" > <!--name="formMarcarConsulta" method="POST" action="funcoesGerais.php"  -->
 			<div class="col-lg-3">
 			</div>
             <div class="col-lg-6">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <!--<div class="form-group">
+                <div class="form-group">
                     <label for="sexoCliente">Sexo</label>
                     <div class="input-group">
                         <input type="text" class="form-control" name="sexoCliente" id="sexoCliente" placeholder="sexo" />
@@ -36,12 +36,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="dtNascCliente">Data Nascimento</label>
+                    <label for="dataNascCliente">Data Nascimento</label>
                     <div class="input-group">
-                        <input type="date" class="form-control" name="dtNascCliente" id="dtNascCliente" placeholder="sexo" />
+                        <input type="date" class="form-control" name="dataNascCliente" id="dataNascCliente" placeholder="sexo" />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
-                </div>-->
+                </div>
 				
 				<div class="form-group">
                     <label for="cpfCliente">CPF</label>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="emailCliente">Email</label>
                     <div class="input-group">
                         <input type="email" class="form-control" name="emailCliente" id="emailCliente" placeholder="seu email aqui" />
@@ -73,7 +73,7 @@
                         <input type="text" class="form-control" name="enderecoCliente" id="enderecoCliente" placeholder="seu endereço aqui" />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
-                </div> -->
+                </div>
 				
                 <button type="submit" name="btsalvar"   class="btn btn-primary btn-lg pull-center"> Salvar </button>
 				</div>

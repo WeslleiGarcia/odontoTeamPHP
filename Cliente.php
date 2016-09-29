@@ -43,15 +43,19 @@
 		  * @param $titulo - Valor para o campo titulo   
 		  * @param autor  - Valor para o campo autor   
 		  */   
-		  public function insert($nomeCliente, $telefoneCliente, $cpfCliente){   
-		   if (!empty($nomeCliente) && !empty($telefoneCliente) && !empty($cpfCliente)):   
+		  public function insert($nomeCliente, $dataNascCliente, $sexoCliente, $cpfCliente, $telefoneCliente, $emailCliente, $enderecoCliente){   
+		   if (!empty($nomeCliente) && !empty($dataNascCliente) && !empty($sexoCliente) && !empty($cpfCliente) && !empty($telefoneCliente) && !empty($emailCliente) && !empty($enderecoCliente)):   
 			    try{   
-			     $sql = "INSERT INTO cliente (nomeCliente, telefone, cpf)
-			      VALUES (:nomeCliente, :telefoneCliente, :cpfCliente)";   
+			     $sql = "INSERT INTO cliente (nomeCliente, dataNasc, sexo, cpf, email, telefone, endereco)
+			      VALUES (:nomeCliente, :dataNascCliente, :sexoCliente, :cpfCliente, :telefoneCliente, :emailCliente, :enderecoCliente)";   
 			     $stm = $this->pdo->prepare($sql);   
 			     $stm->bindValue(':nomeCliente', $nomeCliente);   
-			     $stm->bindValue(':telefoneCliente', $telefoneCliente);   
+			     $stm->bindValue(':dataNascCliente', $dataNascCliente);   
+			     $stm->bindValue(':sexoCliente', $sexoCliente);
 			     $stm->bindValue(':cpfCliente', $cpfCliente);   
+			     $stm->bindValue(':telefoneCliente', $telefoneCliente);   
+			     $stm->bindValue(':emailCliente', $emailCliente);
+			     $stm->bindValue(':enderecoCliente', $enderecoCliente); 
 			     $stm->execute(); 
 			     echo "<script>alert('Registro inserido com sucesso')</script>";   
 			    }catch(PDOException $erro){   

@@ -43,15 +43,15 @@
 		  * @param $titulo - Valor para o campo titulo   
 		  * @param autor  - Valor para o campo autor   
 		  */   
-		  	public function insert($idCliente, $croMedico,  $horaConsulta){   
+		  	public function insert($idCliente, $croMedico, $dataConsulta, $horaConsulta){   
 			   if (!empty($idCliente) && !empty($croMedico) && !empty($dataConsulta) && !empty($horaConsulta)):   
 				    try{   
-					     $sql = "INSERT INTO consulta (Cliente_idCliente, Odontologista_cro,  horaConsulta)
-					      VALUES (:idCliente, :croMedico,  :horaConsulta)";   
+					     $sql = "INSERT INTO consulta (Cliente_idCliente, Odontologista_cro, dataConsulta, hora)
+					      VALUES (:idCliente, :croMedico, :dataConsulta, :horaConsulta)";   
 					     $stm = $this->pdo->prepare($sql);   
 					     $stm->bindValue(':idCliente', $idCliente); 
 					     $stm->bindValue(':croMedico', $croMedico);   
-					     /*$stm->bindValue(':dataConsulta', $dataConsulta);  :dataConsulta, dataConsulta, $dataConsulta,*/ 
+					     $stm->bindValue(':dataConsulta', $dataConsulta);    
 					     $stm->bindValue(':horaConsulta', $horaConsulta);   
 					     $stm->execute(); 
 				     	echo "<script>alert('Consulta marcada com sucesso')</script>";   

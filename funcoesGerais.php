@@ -11,31 +11,29 @@
 	$telefoneCliente    = (isset($_POST['telefoneCliente']))                ? $_POST['telefoneCliente'] : '';
 	$cpfCliente    		= (isset($_POST['cpfCliente']))                     ? $_POST['cpfCliente'] : '';
 
+	$sexoCliente    	= (isset($_POST['sexoCliente']))                    ? $_POST['sexoCliente'] : '';
+	$dataNascCliente    = (isset($_POST['dataNascCliente']))                ? $_POST['dataNascCliente'] : '';
+	$enderecoCliente    		= (isset($_POST['enderecoCliente']))                     ? $_POST['enderecoCliente'] : '';
+	$emailCliente    		= (isset($_POST['emailCliente']))                     ? $_POST['emailCliente'] : '';
+
 	$croMedico    		= (isset($_POST['croMedico']))                     ? $_POST['croMedico'] : '';
 	$dataConsulta    		= (isset($_POST['dataConsulta']))                     ? $_POST['dataConsulta'] : '';
 	$horaConsulta    		= (isset($_POST['horaConsulta']))                     ? $_POST['horaConsulta'] : '';
 
-	$dados = $cliente->getAllClientes();
+	/*$dados = $cliente->getAllClientes();
 
 	foreach ($dados as $reg):
-
-		if($nomeCliente == $reg->nomeCliente){
-			$id = $reg->idCliente;
-			$consulta->insert($id, $croMedico,  $horaConsulta); /*$dataConsulta,*/
-		}else{
-			echo "nao encontrado";
-		}
 	endforeach;
 
-	$idTeste = $reg->idCliente;
-	echo "id: ".$idTeste; echo "<br />";
-	echo "telefone: ".$telefoneCliente; echo "<br />";
-	echo "cpf: ".$cpfCliente; echo "<br />";
-	echo "cro: ".$croMedico; echo "<br />";
-	echo "data: ".$dataConsulta; echo "<br />";
-	echo "hora: ".$horaConsulta; echo "<br />";
+	if($nomeCliente == $reg->nomeCliente){
+		$id = $reg->idCliente;
+		$consulta->insert($id, $croMedico, $dataConsulta, $horaConsulta); 
+	}else{
+			echo "Cliente Não encontrado. Por favor, Faça seu cadastro."; echo "<br />";
+			echo "<a href='cadastrarCliente.php'> CADASTRAR CLIENTE </a>";
+	}
 
-	/*$cliente->insert($nomeCliente, $telefoneCliente, $cpfCliente); */
+	*/
 /*
 	$dados = $cliente->pesquisaNomeCliente($nomeCliente);
 
@@ -53,5 +51,5 @@
 
 
 
-	/*$consulta->insert($nomeCliente, $telefoneCliente, $cpfCliente, $croMedico, $dataConsulta, $horaConsulta);	*/ 
+	$cliente->insert($nomeCliente, $dataNascCliente, $sexoCliente, $cpfCliente, $telefoneCliente, $emailCliente, $enderecoCliente); 
 ?>
