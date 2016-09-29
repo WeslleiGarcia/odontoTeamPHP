@@ -4,7 +4,7 @@
 	/*
 	 * Classe para operações CRUD na tabela ARTIGO   
 	 */
-	class marcarConsulta{  
+	class Consulta{  
 	 
 		  /*  
 		   * Atributo para conexão com o banco de dados   
@@ -14,7 +14,7 @@
 		  /*  
 		   * Atributo estático para instância da própria classe    
 		   */  
-	  private static $marcarConsulta = null; 
+	  private static $consulta = null; 
 	 
 		  /*  
 		   * Construtor da classe como private  
@@ -31,10 +31,10 @@
 		  * @return $crudBlog - Instancia do objeto crudBlog    
 		  */   
 		  public static function getInstance($conexao){   
-		   if (!isset(self::$marcarConsulta)):    
-		    self::$marcarConsulta = new marcarConsulta($conexao);   
+		   if (!isset(self::$consulta)):    
+		    self::$consulta = new consulta($conexao);   
 		   endif;   
-		   return self::$marcarConsulta;    
+		   return self::$consulta;    
 		  } 
 		 
 		  /*   
@@ -43,15 +43,18 @@
 		  * @param $titulo - Valor para o campo titulo   
 		  * @param autor  - Valor para o campo autor   
 		  */   
-		  public function insert($nomeCliente, $telefoneCliente, $cpfCliente){   
-		   if (!empty($nomeCliente) && !empty($telefoneCliente) && !empty($cpfCliente)):   
+		  public function insert($nomeCliente, $telefoneCliente, $cpfCliente, $croMedico, $dataConsulta, $horaConsulta){   
+		   if (!empty($nomeCliente) && !empty($telefoneCliente) && !empty($cpfCliente) && !empty($croMedico) && !empty($dataConsulta) && !empty($horaConsulta)):   
 			    try{   
-			     $sql = "INSERT INTO cliente (nomeCliente, telefone, cpf)
-			      VALUES (:nomeCliente, :telefoneCliente, :cpfCliente)";   
+			     $sql = "INSERT INTO consulta (nomeCliente, telefone, cpf, croMedico, dataConsulta, horaConsulta)
+			      VALUES (:nomeCliente, :telefoneCliente, :cpfCliente, :croMedico, :dataConsulta, :horaConsulta)";   
 			     $stm = $this->pdo->prepare($sql);   
 			     $stm->bindValue(':nomeCliente', $nomeCliente);   
 			     $stm->bindValue(':telefoneCliente', $telefoneCliente);   
-			     $stm->bindValue(':cpfCliente', $cpfCliente);   
+			     $stm->bindValue(':cpfCliente', $cpfCliente);
+			     $stm->bindValue(':croMedico', $croMedico);   
+			     $stm->bindValue(':dataConsulta', $dataConsulta);   
+			     $stm->bindValue(':horaConsulta', $horaConsulta);   
 			     $stm->execute(); 
 			     echo "<script>alert('Registro inserido com sucesso')</script>";   
 			    }catch(PDOException $erro){   

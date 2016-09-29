@@ -167,7 +167,7 @@
 				<div class="form-group">
                     <label for="odontologista">Odontologista</label>
                     <div class="input-group" >
-                        <select class="form-control" id="cro" name="croMedico">
+                        <select class="form-control" id="croMedico" name="croMedico">
 						  <?php
 							$dados = $marcarConsulta->getAllOdontologistas();
 							foreach ($dados as $reg):
