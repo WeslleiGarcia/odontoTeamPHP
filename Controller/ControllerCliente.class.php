@@ -1,34 +1,59 @@
 <?php
 namespace ControllerCliente;
+require_once '../Model/ClienteDAO.class.php';
 
 	Class ControllerCliente{
 
-		public insert(){
+		public function insert(){
+			$cliente = new Cliente();
+			//pego da view aqui
+
+			$cliente->setIdCliente($idCliente);
+			$cliente->setNomeCliente($nomeCliente);
+			$cliente->setSexoCliente($sexoCliente);
+			$cliente->setDataNascCliente($dataNascCliente);
+			$cliente->setRgCliente($rgCliente);
+			$cliente->setCpfCliente($cpfCliente);
+			$cliente->setEnderecoCliente($enderecoCliente);
+			$cliente->setEstadoCivilCliente($estadoCivilCliente);
+			$facede = new Facede();
+			$facede->insert($cliente);
+		}
+
+		public function update(){
+
+		}
+
+		public function delete(){
+
+		}
+
+		public function pesquisar_por_nome(){
 			
 		}
 
-		public update(){
-			
+		public function pesquisar_por_id(){
+
 		}
 
-		public delete(){
-			
+		public function pesquisar_por_cpf(){
+
 		}
 
-		public selectAll(){
-			
+		public function agendar_consulta(){
+
 		}
 
-		public selectId(){
-			
+		public function cancelar_consulta(){
+
 		}
 
-		public selectNome(){
-			
+		public function ver_historico_consulta(){
+
 		}
 
-		public selectCPF(){
-			
+		public function detalhes_consulta(){
+
 		}
 	}
 

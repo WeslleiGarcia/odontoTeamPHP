@@ -1,6 +1,4 @@
 <?php
-require_once 'model/ClienteDAO.php';
-namespace Cliente;
 
 	Class Cliente{
 		private $idCliente;
@@ -12,19 +10,9 @@ namespace Cliente;
 		private $enderecoCliente;
 		private $estadoCivilCliente;
 
-		public function Cliente(){
-
-		}
-
-		public function insert($idCliente, $nomeCliente, $sexoCliente, $dataNascCliente, $rgCliente, $cpfCliente, $enderecoCliente, $estadoCivilCliente){
-			$cliente = new Cliente();
-			$this=$cliente->insertDAO();
-
-		}
-
 		/*GET E SETTER idCliente */
 		public function getIdCliente(){
-			return $idCliente;
+			return $this->$idCliente;
 		}
 
 		public function setIdCliente($idCliente){
@@ -32,65 +20,65 @@ namespace Cliente;
 		}
 
 		/*GET E SETTER nomeCliente */
-		public function getIdCliente(){
-			return $nomeCliente;
+		public function getNomeCliente(){
+			return $this->$nomeCliente;
 		}
 
-		public function setIdCliente($nomeCliente){
+		public function setNomeCliente($nomeCliente){
 			$this->nomeCliente = $nomeCliente;
 		}
 
 		/*GET E SETTER sexoCliente */
-		public function getIdCliente(){
-			return $sexoCliente;
+		public function getSexoliente(){
+			return $this->$sexoCliente;
 		}
 
-		public function setIdCliente($sexoCliente){
+		public function setSexoCliente($sexoCliente){
 			$this->sexoCliente = $sexoCliente;
 		}
 
 		/*GET E SETTER dataNascCliente */
-		public function getIdCliente(){
-			return $dataNascCliente;
+		public function getDataNascCliente(){
+			return $this->$dataNascCliente;
 		}
 
-		public function setIdCliente($dataNascCliente){
+		public function setDataNascCliente($dataNascCliente){
 			$this->dataNascCliente = $dataNascCliente;
 		}
 
 		/*GET E SETTER rgCliente */
-		public function getIdCliente(){
-			return $rgCliente;
+		public function getRgCliente(){
+			return $this->$rgCliente;
 		}
 
-		public function setIdCliente($rgCliente){
+		public function setRgCliente($rgCliente){
 			$this->rgCliente = $rgCliente;
 		}
 
 		/*GET E SETTER cpfCliente */
-		public function getIdCliente(){
+		public function getCpfCliente(){
 			return $cpfCliente;
 		}
 
-		public function setIdCliente($cpfCliente){
+		public function setCpfCliente($cpfCliente){
 			$this->cpfCliente = $cpfCliente;
 		}
 
 		/*GET E SETTER enderecoCliente */
-		public function getIdCliente(){
-			return $cpfCliente;
+		public function getEnderecoCliente(){
+			return $this->$cpfCliente;
 		}
 
-		public function setIdCliente($cpfCliente){
+		public function setEnderecoCliente($cpfCliente){
 			$this->cpfCliente = $cpfCliente;
 		}
 
 		/*GET E SETTER estadoCivilCliente */
-		public function getIdCliente(){
-			return $estadoCivilCliente;
+		public function getEstadoCivilCliente(){
+			return $this->$estadoCivilCliente;
 		}
 
-		public function setIdCliente($estadoCivilCliente){
+		public function setEstadoCivilCliente($estadoCivilCliente){
 			$this->estadoCivilCliente = $estadoCivilCliente;
 		}
 	}
