@@ -1,23 +1,12 @@
 <?php
-namespace ControllerCliente;
-require_once '../Model/ClienteDAO.class.php';
+require_once 'Model/Facede.class.php';
 
 	Class ControllerCliente{
 
-		public function insert(){
-			$cliente = new Cliente();
-			//pego da view aqui
+		public function insert($cliente){
 
-			$cliente->setIdCliente($idCliente);
-			$cliente->setNomeCliente($nomeCliente);
-			$cliente->setSexoCliente($sexoCliente);
-			$cliente->setDataNascCliente($dataNascCliente);
-			$cliente->setRgCliente($rgCliente);
-			$cliente->setCpfCliente($cpfCliente);
-			$cliente->setEnderecoCliente($enderecoCliente);
-			$cliente->setEstadoCivilCliente($estadoCivilCliente);
 			$facede = new Facede();
-			$facede->insert($cliente);
+			$facede->insertCliente($cliente);
 		}
 
 		public function update(){

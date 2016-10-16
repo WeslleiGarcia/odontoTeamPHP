@@ -1,5 +1,5 @@
 <?php
-	require_once  "Model/ClienteDAO.class.php";
+	require_once  "ClienteDAO.class.php";
 
 	Class Facede{
 

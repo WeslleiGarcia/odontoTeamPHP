@@ -12,7 +12,7 @@
 
 		/*GET E SETTER idCliente */
 		public function getIdCliente(){
-			return $this->$idCliente;
+			return $this->idCliente;
 		}
 
 		public function setIdCliente($idCliente){
@@ -21,7 +21,7 @@
 
 		/*GET E SETTER nomeCliente */
 		public function getNomeCliente(){
-			return $this->$nomeCliente;
+			return $this->nomeCliente;
 		}
 
 		public function setNomeCliente($nomeCliente){
@@ -30,7 +30,7 @@
 
 		/*GET E SETTER sexoCliente */
 		public function getSexoliente(){
-			return $this->$sexoCliente;
+			return $this->sexoCliente;
 		}
 
 		public function setSexoCliente($sexoCliente){
@@ -39,7 +39,7 @@
 
 		/*GET E SETTER dataNascCliente */
 		public function getDataNascCliente(){
-			return $this->$dataNascCliente;
+			return $this->dataNascCliente;
 		}
 
 		public function setDataNascCliente($dataNascCliente){
@@ -48,7 +48,7 @@
 
 		/*GET E SETTER rgCliente */
 		public function getRgCliente(){
-			return $this->$rgCliente;
+			return $this->rgCliente;
 		}
 
 		public function setRgCliente($rgCliente){
@@ -57,7 +57,7 @@
 
 		/*GET E SETTER cpfCliente */
 		public function getCpfCliente(){
-			return $cpfCliente;
+			return $this->cpfCliente;
 		}
 
 		public function setCpfCliente($cpfCliente){
@@ -66,7 +66,7 @@
 
 		/*GET E SETTER enderecoCliente */
 		public function getEnderecoCliente(){
-			return $this->$cpfCliente;
+			return $this->cpfCliente;
 		}
 
 		public function setEnderecoCliente($cpfCliente){
@@ -75,7 +75,7 @@
 
 		/*GET E SETTER estadoCivilCliente */
 		public function getEstadoCivilCliente(){
-			return $this->$estadoCivilCliente;
+			return $this->estadoCivilCliente;
 		}
 
 		public function setEstadoCivilCliente($estadoCivilCliente){

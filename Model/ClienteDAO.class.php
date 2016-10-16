@@ -1,5 +1,6 @@
 <?php
 require_once 'Conexao.class.php';
+require_once 'Cliente.class.php';
 
 	Class ClienteDAO{
 		  /*  
@@ -40,25 +41,24 @@ require_once 'Conexao.class.php';
 		  * @param autor  - Valor para o campo autor   
 		  */   
 
-		public function insert(Cliente $cliente){
-			if(!empty($nomeCliente) && !empty($dataNascCliente) && !empty($sexoCliente) && !empty($cpfCliente) && !empty($rgCliente) && !empty($enderecoCliente) && !empty($estadoCivilCliente)): 
+		public function insert($cliente){
+			if(!empty($nomeCliente) &&  !empty($dataNascCliente) && !empty($sexoCliente) && !empty($cpfCliente) && !empty($rgCliente) && !empty($enderecoCliente) && !empty($estadoCivilCliente)): 
 			    try{   
 			     $sql = "INSERT INTO cliente (nomeCliente, dataNascCliente, sexoCliente, cpfCliente, rgCliente, enderecoCliente, estadoCivilCliente)
-			      VALUES (:nomeCliente, :dataNascCliente, :sexoCliente, :cpfCliente, :rgCliente, :enderecoCliente, :estadoCivilCliente)";   
+			      VALUES (:nomeCliente, :dataNascCliente, :sexoCliente, :cpfCliente, :rgCliente, :enderecoCliente, :estadoCivilCliente)";  
 			     $stm = $this->pdo->prepare($sql);   
 			     $stm->bindParam(':nomeCliente', $nomeCliente);   
 			     $stm->bindParam(':dataNascCliente', $dataNascCliente);   
 			     $stm->bindParam(':sexoCliente', $sexoCliente);
-			     $stm->bindParam('cpfCliente', $cpfCliente);   
-			     $stm->bindParam('rgCliente', $rgCliente);   
-			     $stm->bindParam('enderecoCliente', $enderecoCliente);
-			     $stm->bindParam('estadoCivilCliente', $estadoCivilCliente); 
+			     $stm->bindParam(':cpfCliente', $cpfCliente);   
+			     $stm->bindParam(':rgCliente', $rgCliente);   
+			     $stm->bindParam(':enderecoCliente', $enderecoCliente);
+			     $stm->bindParam(':estadoCivilCliente', $estadoCivilCliente); 
 
-
-			     $stm->execute(); 
+			     return $stm->execute(); 
 			     echo "<script>alert('Registro inserido com sucesso')</script>";   
 			    }catch(PDOException $erro){   
-			     echo "<script>alert('Erro na linha: {$erro->getLine()}')</script>"; 
+			     echo "<script>alert('ClienteDAO-->Erro na linha: {$erro->getLine()}')</script>"; 
 			    }   
 		    endif;   
 		}

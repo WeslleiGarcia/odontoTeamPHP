@@ -1,10 +1,10 @@
 <?php
-	require_once 'Model/Cliente.class.php';
-	require_once 'Model/Facede.class.php'; 
+	require_once '../Model/Cliente.class.php';
+	require_once 'Controller/ControllerCliente.class.php'; 
 
+	$cliente = new Cliente();
 
-
-	$idCliente   			= (isset($_POST['idCliente']))      		? $_POST['idCliente'] : '';
+	//$idCliente   			= (isset($_POST['idCliente']))      		? $_POST['idCliente'] : '';
 	$nomeCliente   			= (isset($_POST['nomeCliente']))      		? $_POST['nomeCliente'] : '';
 	$sexoCliente   			= (isset($_POST['sexoCliente']))      		? $_POST['sexoCliente'] : '';
 	$dataNascCliente   		= (isset($_POST['dataNascCliente']))      	? $_POST['dataNascCliente'] : '';
@@ -14,8 +14,8 @@
 	$estadoCivilCliente   	= (isset($_POST['estadoCivilCliente']))      ? $_POST['estadoCivilCliente'] : '';
 
 
-	$cliente = new Cliente();
-	$cliente->setIdCliente($idCliente);
+	
+	//$cliente->setIdCliente($idCliente);
 	$cliente->setNomeCliente($nomeCliente);
 	$cliente->setSexoCliente($sexoCliente);
 	$cliente->setDataNascCliente($dataNascCliente);
@@ -24,8 +24,8 @@
 	$cliente->setCpfCliente($cpfCliente);
 	$cliente->setEstadoCivilCliente($estadoCivilCliente);
 
-	$facede = new Facede();
-	$facede->insertCliente($cliente);
+	$cCliente = new ControllerCliente();
+	$cCliente->insert($cliente);
 
 
 

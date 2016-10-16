@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 require_once 'config.php';
+
 require_once 'View/salvarCliente.php';
 include (HEAD_TEMPLATE); ?>
 <head>
@@ -10,7 +11,7 @@ include (HEAD_TEMPLATE); ?>
 <body>
 	<div class="container">
 		<div class="col-md-12">
-			<form class="form-horizontal" name="cadastrarNovoCliente" id="cadastrarNovoCliente" type="POST" action="salvarCliente.php">
+			<form class="form-horizontal" name="cadastrarNovoCliente" id="cadastrarNovoCliente" type="POST" action="View\salvarCliente.php">
 				<fieldset>
 					<legend>Cadastrar Novo Cliente</legend>
 						<!-- NOME DO CLIENTE -->
